@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Initialization.Create;
 
 namespace Initialization
 {
@@ -18,8 +19,13 @@ namespace Initialization
         // Function to initialize the game environment
         void InitializeEnvironment()
         {
+            Clear();
             WriteLine("Initializing game environment...");
             // Logic for initializing game environment (e.g., loading configuration files, setting up directories)
+            ITUI.UI uI = new ITUI.UI();
+            uI.FullUI();
+            Config config = new Config();
+            Config.GameConfig gameConfig = new Config.GameConfig();
 
             // Load game settings and configurations
             if (!LoadSettings())
@@ -88,7 +94,9 @@ namespace Initialization
         {
             WriteLine("Populating world with NPCs and creatures...");
             // Logic for populating the world (e.g., spawning NPCs, creating wildlife, establishing settlements)
-            // Replace this with your actual logic
+            NPC npc = new NPC("Apus", "Female", "001", "Queen");
+            WriteLine($"NPC Name: {npc.Name}");
+            ReadKey();
             Thread.Sleep(1000); // Simulating world population
             WriteLine("World populated successfully.");
             return true; // Return true if population is successful, false otherwise
@@ -108,7 +116,10 @@ namespace Initialization
         void StartGame()
         {
             WriteLine("Starting game...");
-            // Logic for starting game sessions or engine
+            // Character creation
+            Character character = new Character("Bob", "Male", "101010", "Programmer");
+            WriteLine($"Character Name: {character.Name}");
+            ReadKey();
             WriteLine("Psychosis in Thear - Game started.");
         }
 

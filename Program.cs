@@ -11,6 +11,7 @@ In Psychosis, every choice matters, every action shapes your destiny.Embark on a
 
 using System;
 using System.Collections.Generic;
+using static Initialization.Create;
 
 namespace Initialization
 {
@@ -18,6 +19,9 @@ namespace Initialization
     {
         static void Main(string[] args)
         {
+            // Create a new instance of the Program class
+            Program program = new Program();
+
             // Set the console window size
             Console.SetWindowSize(100, 40);
 
@@ -33,14 +37,23 @@ namespace Initialization
             // Display the interface description
             Console.WriteLine(interfaceDescription);
 
-            // Execute the initialization
+            // Execute the initialization and display the initialization screen
+            Initialization initialization = new Initialization();
+            initialization.Initialize();
             Initialization game = new Initialization();
             game.Initialize();
+
+            // Display the completion message
+            Console.WriteLine("Initialization complete.");
+            Console.ReadKey();
 
             // Reset the console colours
             Console.ResetColor();
 
-            // Character initialization and creation
+
+            // Wait for user input before closing the console window
+            Console.ReadKey(true);
+
         }
 
         // Colour palette for the interface

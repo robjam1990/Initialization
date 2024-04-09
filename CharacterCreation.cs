@@ -2,13 +2,12 @@
 
 namespace Initialization
 {
-    public class CreateCharacter
+    public class Character
     {
         public string Name { get; }
         public string Gender { get; }
         public int Age { get; set; } // Allow for updating age during gameplay
         public int Size { get; } = 3;
-        public Pigment Pigment { get; }
         public string Odor { get; }
         public string Occupation { get; }
         public Attributes Attributes { get; } = new Attributes();
@@ -27,11 +26,10 @@ namespace Initialization
         /// <param name="pigment">The character's pigment.</param>
         /// <param name="odor">The character's odor.</param>
         /// <param name="occupation">The character's occupation.</param>
-        public CreateCharacter(string name, string gender, Pigment pigment, string odor, string occupation)
+        public Character(string name, string gender, string odor, string occupation)
         {
             Name = name;
             Gender = gender;
-            Pigment = pigment ?? new Pigment(255, 0, 0);
             Odor = odor ?? "bit sequence";
             Occupation = occupation ?? "Adventurer";
 
@@ -48,20 +46,6 @@ namespace Initialization
                 age--;
             }
             return age;
-        }
-    }
-
-    public class Pigment
-    {
-        public int Red { get; }
-        public int Green { get; }
-        public int Blue { get; }
-
-        public Pigment(int red, int green, int blue)
-        {
-            Red = red;
-            Green = green;
-            Blue = blue;
         }
     }
 
@@ -183,39 +167,30 @@ namespace Initialization
 
     class Create
     {
-        static Character CreateCharacter()
+        static Character Character()
         {
             Console.Write("Enter character name:");
             string name = Console.ReadLine() ?? "";
             Console.Write("Enter character gender:");
             string gender = Console.ReadLine() ?? "";
-            Console.Write("Enter red pigment (0-255):");
-            int red = int.TryParse(Console.ReadLine(), out int redValue) ? redValue : 255;
-            Console.Write("Enter green pigment (0-255):");
-            int green = int.TryParse(Console.ReadLine(), out int greenValue) ? greenValue : 0;
-            Console.Write("Enter blue pigment (0-255):");
-            int blue = int.TryParse(Console.ReadLine(), out int blueValue) ? blueValue : 0;
-            Pigment pigment = new Pigment(red, green, blue);
             Console.Write("Enter odor (bit sequence):");
             string odor = Console.ReadLine() ?? "0000000000000000";
             Console.Write("Enter character occupation:");
             string occupation = Console.ReadLine() ?? "";
-            return new Character(name, gender, pigment, odor, occupation);
+            return new Character(name, gender, odor, occupation);
         }
 
-        public class Character
+        public class NPC
         {
             public string Name { get; }
             public string Gender { get; }
-            public Pigment Pigment { get; }
             public string Odor { get; }
             public string Occupation { get; }
 
-            public Character(string name, string gender, Pigment pigment, string odor, string occupation)
+            public NPC(string name, string gender, string odor, string occupation)
             {
                 Name = name;
                 Gender = gender;
-                Pigment = pigment;
                 Odor = odor;
                 Occupation = occupation;
             }
