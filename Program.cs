@@ -36,6 +36,11 @@ namespace Initialization
             // Execute the initialization
             Initialization game = new Initialization();
             game.Initialize();
+
+            // Reset the console colours
+            Console.ResetColor();
+
+            // Character initialization and creation
         }
 
         // Colour palette for the interface
