@@ -12,62 +12,85 @@ In Psychosis, every choice matters, every action shapes your destiny.Embark on a
 using System;
 using System.Collections.Generic;
 
-class Program
+namespace Initialization
 {
-    static void Main(string[] args)
+    class Program
     {
-        // Colour Palette
-        var colours = new Dictionary<string, Dictionary<string, string>>()
+        static void Main(string[] args)
         {
-            { "background", new Dictionary<string, string>()
-                {
-                    { "window", "#F0F0F0" }, // Light Gray
-                    { "control", "#FFFFFF" }, // White
-                    { "progress", "#00CED1" } // Dark Turquoise
-                }
-            },
-            { "text", new Dictionary<string, string>()
-                {
-                    { "window", "#000000" }, // Black
-                    { "control", "#000000" }, // Black
-                    { "progress", "#000000" } // Black
-                }
-            },
-            { "highlight", new Dictionary<string, string>()
-                {
-                    { "control", "#00CED1" } // Dark Turquoise
-                }
-            },
-            { "selected", new Dictionary<string, string>()
-                {
-                    { "control", "#A9A9A9" } // Dark Gray
-                }
-            }
-        };
+            // Set the console window size
+            Console.SetWindowSize(100, 40);
 
-        // Interface Description
-        string interfaceDescription = $@"
+            // Set the console title
+            Console.Title = "Psychosis: Initialization";
+            Console.ReadKey();
+
+            // Set the console colours
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ReadKey(true);
+
+            // Display the interface description
+            Console.WriteLine(interfaceDescription);
+
+            // Execute the initialization
+            Initialization game = new Initialization();
+            game.Initialize();
+        }
+
+        // Colour palette for the interface
+        static Dictionary<string, Dictionary<string, string>> colours = new Dictionary<string, Dictionary<string, string>>()
+    {
+        {
+            "background", new Dictionary<string, string>()
+            {
+                { "window", "\u001b[47m" }, // Light Gray
+                { "control", "\u001b[37m" }, // White
+                { "progress", "\u001b[6m" } // Dark Turquoise
+            }
+        },
+        {
+            "text", new Dictionary<string, string>()
+            {
+                { "window", "\u001b[30m" }, // Black
+                { "control", "\u001b[30m" }, // Black
+                { "progress", "\u001b[30m" } // Black
+            }
+        },
+        {
+            "highlight", new Dictionary<string, string>()
+            {
+                { "control", "\u001b[36m" } // Dark Turquoise
+            }
+        },
+        {
+            "selected", new Dictionary<string, string>()
+            {
+                { "control", "\u001b[100m" } // Dark Gray
+            }
+        }
+    };
+
+        // Interface description
+        static string interfaceDescription = @"
 Welcome to the world of Psychosis, set in the vibrant realm of Thear. As you explore this vast and immersive universe, you'll encounter a variety of environments and challenges. To enhance your experience, we've designed a visually stunning interface with carefully chosen colours.
 
 Colour Palette:
 - Background:
-  - Window: {colours["background"]["window"]} (Light Gray)
-  - Control: {colours["background"]["control"]} (White)
-  - Progress: {colours["background"]["progress"]} (Dark Turquoise)
+  - Window: {colours[""background""][""window""]} (Light Gray)
+  - Control: {colours[""background""][""control""]} (White)
+  - Progress: {colours[""background""][""progress""]} (Dark Turquoise)
 - Text:
-  - Window: {colours["text"]["window"]} (Black)
-  - Control: {colours["text"]["control"]} (Black)
-  - Progress: {colours["text"]["progress"]} (Black)
+  - Window: {colours[""text""][""window""]} (Black)
+  - Control: {colours[""text""][""control""]} (Black)
+  - Progress: {colours[""text""][""progress""]} (Black)
 - Highlight:
-  - Control: {colours["highlight"]["control"]} (Dark Turquoise)
+  - Control: {colours[""highlight""][""control""]} (Dark Turquoise)
 - Selected:
-  - Control: {colours["selected"]["control"]} (Dark Gray)
+  - Control: {colours[""selected""][""control""]} (Dark Gray)
 
 These colours have been selected to provide a clear and immersive experience as you navigate the world of Psychosis. Whether you're engaging in tactical combat, managing your nation, or exploring the ecosystem, these colours will help you stay focused and engaged.
 
-We hope you enjoy your adventure in Psychosis, where every choice you make shapes the world around you. Dive in and explore the possibilities that await!
-";
-
-        Console.WriteLine(interfaceDescription);
+We hope you enjoy your adventure in Psychosis, where every choice you make shapes the world around you. Dive in and explore the possibilities that await!";
     }
 }
