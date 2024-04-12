@@ -30,7 +30,7 @@ namespace Initialization
                 WriteLine(@"||                                            ||                                                                    ||");
                 WriteLine(@"||                                            ||                                                                    ||");
                 WriteLine(@"|__===========================================\/==========================================_/======================__/|");
-                WriteLine(@"||(M)ovement        (O)bservation      (R)un  /                                           |\_  Character Quests:  _/_|");
+                WriteLine(@"||(M)ovement        (O)bservation      (R)un  /                                           |\_  User Quests:  _/_|");
                 WriteLine(@"||                                           /                                            |_\|\__|__=============__\_|");
                 WriteLine(@"||                             __=========__|_____________________________________________|__\_|/|List:             ||");
                 WriteLine(@"||                             |Text output:|                                                 \ \|                  ||");
@@ -48,7 +48,7 @@ namespace Initialization
                 WriteLine(@"||                                            ||                                                 |                  /|");
                 WriteLine(@"||                                            |\                                                 |                 / |");
                 WriteLine(@"||                                            |__\===================/===========================^================/__|");
-                WriteLine(@"||                                            ||Character Statistics/                                               ||");
+                WriteLine(@"||                                            ||User Statistics/                                               ||");
                 WriteLine(@"||                                            |__================__/                                                ||");
                 WriteLine(@"||                                            ||/                                                                   ||");
                 WriteLine(@"||                                            ||                                                                    ||");
@@ -135,7 +135,7 @@ namespace Initialization
             public void CharacterStatsUI()
             {
                 WriteLine(@"|__\===================/===========================^================/__|");
-                WriteLine(@"||Character Statistics/                                               ||");
+                WriteLine(@"||User Statistics/                                               ||");
                 WriteLine(@"|__================__/                                                ||");
                 WriteLine(@"||/                                                                   ||");
                 WriteLine(@"||                                                                    ||");
@@ -169,7 +169,7 @@ namespace Initialization
             public void QuestsUI()
             {
                 WriteLine(@"===================__/|");
-                WriteLine(@"Character Quests:  _/_|");
+                WriteLine(@"User Quests:  _/_|");
                 WriteLine(@"__|__=============__\_|");
                 WriteLine(@"|/|List:             ||");
                 WriteLine(@" \|                  ||");

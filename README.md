@@ -87,3 +87,69 @@ The project author is used to set the author of the project. This is used to ide
 	"author": "robjam1990"
 }
 ```
+
+### Project License
+The project license is used to set the license of the project. This is used to identify the license of the project and is used in the various properties that are used in the project.
+
+```json
+{
+	"license": "MIT"
+}
+```
+
+### Project Repository
+The project repository is used to set the repository of the project. This is used to identify the repository of the project and is used in the various properties that are used in the project.
+
+```
+json
+{
+	"repository": {
+		"type": "git",
+		"url": "
+		}
+		}
+```
+
+### Project Keywords
+The project keywords are used to set the keywords of the project. This is used to identify the keywords of the project and is used in the various properties that are used in the project.
+
+```json
+{
+	"keywords": [
+		"psychosis",
+		"project",
+		"configuration",
+		"initialization"
+	]
+}
+```
+
+### Project Scripts
+The project scripts are used to set the scripts of the project. This is used to identify the scripts of the project and is used in the various properties that are used in the project.
+
+```json
+{
+	"scripts": {
+		"start": "psychosis start",
+		"build": "psychosis build",
+		"test": "psychosis test",
+		"lint": "psychosis lint",
+		"format": "psychosis format",
+		"validate": "psychosis validate",
+		"analyze": "psychosis analyze",
+		"deploy": "psychosis deploy",
+		"release": "psychosis release"
+	}
+}
+```
+
+### Project Dependencies
+The project dependencies are used to set the dependencies of the project. This is used to identify the dependencies of the project and is used in the various properties that are used in the project.
+
+```json
+{
+	"dependencies": {
+		"psychosis": "^0.8.0"
+	}
+}
+```

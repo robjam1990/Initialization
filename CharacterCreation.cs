@@ -2,7 +2,7 @@
 
 namespace Initialization
 {
-    public class Character
+    public class User
     {
         public string Name { get; }
         public string Gender { get; }
@@ -26,7 +26,7 @@ namespace Initialization
         /// <param name="pigment">The character's pigment.</param>
         /// <param name="odor">The character's odor.</param>
         /// <param name="occupation">The character's occupation.</param>
-        public Character(string name, string gender, string odor, string occupation)
+        public User(string name, string gender, string odor, string occupation)
         {
             Name = name;
             Gender = gender;
@@ -167,7 +167,7 @@ namespace Initialization
 
     class Create
     {
-        static Character Character()
+        static User Character()
         {
             Console.Write("Enter character name:");
             string name = Console.ReadLine() ?? "";
@@ -177,7 +177,7 @@ namespace Initialization
             string odor = Console.ReadLine() ?? "0000000000000000";
             Console.Write("Enter character occupation:");
             string occupation = Console.ReadLine() ?? "";
-            return new Character(name, gender, odor, occupation);
+            return new User(name, gender, odor, occupation);
         }
 
         public class NPC

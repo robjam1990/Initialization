@@ -8,7 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="play - Shortcut.lnk" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+	
+	  <ItemGroup>
+	<ProjectReference Include="..\Common\Common.csproj" />
+		  </ItemGroup>
+
+  <ItemGroup>
+	<Compile Update="Program.cs">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+	<Content Include="play - Shortcut.lnk">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
   </ItemGroup>
 
 </Project>

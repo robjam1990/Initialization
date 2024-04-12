@@ -9,9 +9,11 @@ Survival itself is a challenge, with oxygen, temperature, disease, hunger, energ
 In Psychosis, every choice matters, every action shapes your destiny.Embark on an odyssey through Thear, where the boundaries of reality blur, and the possibilities are as infinite as the cosmos itself.
 */
 
+using Project;
 using System;
 using System.Collections.Generic;
 using static Initialization.Create;
+using static System.Console;
 
 namespace Initialization
 {
@@ -23,19 +25,35 @@ namespace Initialization
             Program program = new Program();
 
             // Set the console window size
-            Console.SetWindowSize(100, 40);
+            SetWindowSize(100, 40);
+            WriteLine("Welcome to Psychosis! Press any key to begin.");
+            TextAnimation.WaitForKey();
+
+            // Display intro animations
+            TextAnimation.PlayDeadAnimation();
+            TextAnimation.GameTitle();
+            TextAnimation.WaitForKey();
+
+            // Display the game description
+            WriteLine("In the Unknown of Psychosis, where adventure awaits in the vast expanses of Thear, your journey begins amidst the intricate tapestry of the Main Hall of Nexus Tavern, nestled within the bustling town of Nexus, Bractalia. Here, amidst the clinking of tankards and murmurs of patrons, your tale unfurls with boundless possibilities.");
+            TextAnimation.WaitForKey();
+
+            // Display the game features
+            WriteLine("As you venture forth, prepare to navigate a fully explorable solar system, where round planets beckon exploration and discovery. Engage in tactical combat, where each move is pivotal, utilizing a limb removal system that adds depth and strategy to every encounter.");
+            TextAnimation.WaitForKey();
 
             // Set the console title
-            Console.Title = "Psychosis: Initialization";
-            Console.ReadKey();
+            Title = "Psychosis: Initialization";
+            TextAnimation.Say("Welcome to Psychosis! Press any key to begin.", ConsoleColor.DarkRed, 732);
+            TextAnimation.WaitForKey();
 
             // Set the console colours
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.ReadKey(true);
+            BackgroundColor = ConsoleColor.White;
+            ForegroundColor = ConsoleColor.Black;
 
             // Display the interface description
-            Console.WriteLine(interfaceDescription);
+            WriteLine(interfaceDescription);
+            TextAnimation.WaitForKey();
 
             // Execute the initialization and display the initialization screen
             Initialization initialization = new Initialization();
@@ -44,15 +62,19 @@ namespace Initialization
             game.Initialize();
 
             // Display the completion message
-            Console.WriteLine("Initialization complete.");
-            Console.ReadKey();
+            WriteLine("Initialization complete.");
+            TextAnimation.WaitForKey();
+
+            // Possibly disply error message
+            WriteLine("An error occurred during initialization. Please try again.");
+            TextAnimation.WaitForKey();
 
             // Reset the console colours
-            Console.ResetColor();
+            ResetColor();
 
 
             // Wait for user input before closing the console window
-            Console.ReadKey(true);
+            TextAnimation.WaitForKey();
 
         }
 

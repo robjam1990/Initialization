@@ -116,9 +116,9 @@ namespace Initialization
         void StartGame()
         {
             WriteLine("Starting game...");
-            // Character creation
-            Character character = new Character("Bob", "Male", "101010", "Programmer");
-            WriteLine($"Character Name: {character.Name}");
+            // User creation
+            User character = new User("Bob", "Male", "101010", "Programmer");
+            WriteLine($"User Name: {character.Name}");
             ReadKey();
             WriteLine("Psychosis in Thear - Game started.");
         }
@@ -178,6 +178,17 @@ namespace Initialization
 
             // Start game
             StartGame();
+            Program program = new Program();
+            Program initialization = new Program();
+
+            // Game loop
+            while (true)
+            {
+                // Game logic goes here
+                WriteLine("Game loop running...");
+                Thread.Sleep(1000); // Simulating game loop
+                WriteLine("Game loop iteration complete.");
+            }
         }
     }
 }
