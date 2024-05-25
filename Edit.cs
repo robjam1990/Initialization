@@ -6,7 +6,7 @@ namespace FileEditor
 {
     class Program
     {
-        static void EditFiles()
+        static void Main(string[] args)
         {
             // Usage examples
 

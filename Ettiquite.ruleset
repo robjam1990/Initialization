@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSets>
+    <RuleSet Name="Etiquette" Description="Simple etiquette expected of all citizens of Bractalia." ToolsVersion="10.0">
+        <Rules>
+            <Rule Name="Output" Description="Not all Input prompt an Output.[-(-)=+]" Id="Output" Action="Caution" />
+            <Rule Name="Input" Description="An Input must always be accepted.[-0]" Id="Input" Action="Caution" />
+            <Rule Name="Greeting" Description="A Greeting is the initial friendly exchange.[G++]" Id="Greeting" Action="Caution" />
+            <Rule Name="Farewell" Description="A Farewell is the final friendly exchange.[F--]" Id="Farewell" Action="Caution" />
+            <Rule Name="Safety" Description="Safety rules to prevent accidents." Id="Safety" Action="Caution" />
+            <Rule Name="Navigation" Description="Navigating through the wilderness." Id="Navigation" Action="Caution" />
+            <Rule Name="FirstAid" Description="Knowledge of basic first aid techniques." Id="FirstAid" Action="Caution" />
+            <Rule Name="FireSafety" Description="Preventing and managing fires." Id="FireSafety" Action="Caution" />
+        </Rules>
+    </RuleSet>
+    <RuleSet Name="Laws" Description="The Laws of the Country of Bractalia" ToolsVersion="10.0">
+        <Rules>
+            <Rule Name="Slander" Description="Spreading false information to harm someone's reputation." Id="Slander" Action="Violation" />
+            <Rule Name="Assault" Description="Physically attacking or causing harm to someone." Id="Assault" Action="Violation" />
+            <Rule Name="Vandalism" Description="Damaging or destroying property intentionally." Id="Vandalism" Action="Violation" />
+            <Rule Name="ResistingArrest" Description="Refusing to comply with a lawful arrest." Id="ResistingArrest" Action="Violation" />
+            <Rule Name="TaxEvasion" Description="Intentionally avoiding paying taxes." Id="TaxEvasion" Action="Violation" />
+        </Rules>
+    </RuleSet>
+    <RuleSet Name="Survival" Description="The Rules to stay alive in the wild." ToolsVersion="10.0">
+        <Rules>
+            <Rule Name="Food" Description="You must eat to survive." Id="Food" Action="Warning" />
+            <Rule Name="Water" Description="You must drink to survive." Id="Water" Action="Warning" />
+            <Rule Name="Shelter" Description="You must have shelter to survive." Id="Shelter" Action="Warning" />
+            <Rule Name="Warmth" Description="You must stay warm to survive." Id="Warmth" Action="Warning" />
+        </Rules>
+    </RuleSet>
+</RuleSets>

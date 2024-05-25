@@ -5,6 +5,28 @@ namespace CS
 {
     public class Program
     {
+        public static void Main(string[] args)
+        {
+            if (args.Length < 3)
+            {
+                Console.WriteLine("Usage: dotnet run input_file1 input_file2 ... output_file");
+                Environment.Exit(1);
+            }
+
+            string[] filePaths = new string[args.Length - 1];
+            Array.Copy(args, filePaths, args.Length - 1);
+            string outputFile = args[args.Length - 1];
+
+            try
+            {
+                FormatToCSharp(filePaths, outputFile);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"An error occurred: {e.Message}");
+            }
+        }
+
         public static void FormatToCSharp(string[] filePaths, string outputFile)
         {
             try
@@ -77,14 +99,6 @@ namespace CS
         {
             // JSON files don't need conversion for C# compatibility
             return content;
-        }
-
-        public static void Main()
-        {
-            string[] filePaths = { "NPC.js", "BootstrapConfig.json", "Initialization.cs", "Edit.cs" };
-            string outputFile = "FormattedFiles.cs";
-
-            FormatToCSharp(filePaths, outputFile);
         }
     }
 }
